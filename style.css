@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.slider {
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    margin: 100px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s cubic-bezier(.77, 0, .18, 1);
+}
+
+img {
+    width: 1200px;
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: transform 1s ease, filter 1s ease;
+}
+
+img.active {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px;
+}
